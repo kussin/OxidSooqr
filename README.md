@@ -7,6 +7,13 @@ with a search bar from [Sooqr](https://www.sooqr.com/).
 
 **The following configuration options are available:**
 
+1. `account` - Sooqr ID
+2. `setResizeFunction` - Suggest language code
+3. `_setPosition` - Suggest Position (e.g. `screen-middle`)
+4. `_setPositionOptions` - Suggest Position-Options (e.g. `{top:50, left: 20}`)
+5. `_setLocale` - Suggest language code
+6. `_excludePlaceholders` - Suggest exclude placeholders (e.g. `Search..`)
+
 TODO: Will follow soon
 
 ## Requirement

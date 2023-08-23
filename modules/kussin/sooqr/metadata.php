@@ -3,70 +3,75 @@
  * Metadata version
  */
 $sMetadataVersion = '2.0';
- 
+
+use OxidEsales\Eshop\Application\Controller\SearchController;
+
 /**
  * Module information
  */
 $aModule = array(
-    'id'           => 'wmdk/tracking',
-    'title'        => 'KUSSIN | GTM Basic Integrator for OXID eShop 6.1.x',
-    'description'  => array(
-        'de' => 'Fügt den <a href="https://www.kussin.de/marketing/google-tag-manager-x-shopify-e-commerce-datalayer-einrichten/" target="_blank">GTM Code inkl. Data Layer</a> zu OXID eSales hinzu.',
-        'en' => 'Adds <a href="https://www.kussin.de/marketing/google-tag-manager-x-shopify-e-commerce-datalayer-einrichten/" target="_blank">gtm code incl. data layer</a> to OXID eSales.',
-    ),
+    'id'           => 'kussin/sooqr',
+    'title'        => 'Kussin | Sooqr Connector for OXID eShop',
+    'description'  => 'Sooqr Connector for OXID eShop',
     'thumbnail'    => 'module.png',
-    'version'      => '0.1.0',
+    'version'      => '0.0.1',
     'author'       => 'Daniel Kussin',
     'url'          => 'https://www.kussin.de',
     'email'        => 'daniel.kussin@kussin.de',
 
-    'templates' => array(
-        'wmdk_default.tpl' => 'wmdk/tracking/views/blocks/default.tpl',
-
-        'wmdk_default_head.tpl' => 'wmdk/tracking/views/blocks/head.tpl',
-        'wmdk_default_body.tpl' => 'wmdk/tracking/views/blocks/body.tpl',
-
-        'wmdk_class_start.tpl' => 'wmdk/tracking/views/blocks/classes/start.tpl',
-        'wmdk_class_search.tpl' => 'wmdk/tracking/views/blocks/classes/search.tpl',
-        'wmdk_class_alist.tpl' => 'wmdk/tracking/views/blocks/classes/alist.tpl',
-        'wmdk_class_manufacturerlist.tpl' => 'wmdk/tracking/views/blocks/classes/manufacturerlist.tpl',
-        'wmdk_class_details.tpl' => 'wmdk/tracking/views/blocks/classes/details.tpl',
-        'wmdk_class_basket.tpl' => 'wmdk/tracking/views/blocks/classes/basket.tpl',
-        'wmdk_class_user.tpl' => 'wmdk/tracking/views/blocks/classes/user.tpl',
-        'wmdk_class_payment.tpl' => 'wmdk/tracking/views/blocks/classes/payment.tpl',
-        'wmdk_class_order.tpl' => 'wmdk/tracking/views/blocks/classes/order.tpl',
-        'wmdk_class_thankyou.tpl' => 'wmdk/tracking/views/blocks/classes/thankyou.tpl',
-        'wmdk_class_register.tpl' => 'wmdk/tracking/views/blocks/classes/register.tpl',
-        'wmdk_class_account.tpl' => 'wmdk/tracking/views/blocks/classes/account.tpl',
-        'wmdk_class_account_menu.tpl' => 'wmdk/tracking/views/blocks/classes/account-menu.tpl',
-        'wmdk_class_content.tpl' => 'wmdk/tracking/views/blocks/classes/content.tpl',
-        'wmdk_class_error404.tpl' => 'wmdk/tracking/views/blocks/classes/error-404.tpl',
-
-        // Google Tag Manager
-        'wmdk_google_tag_manager_default.tpl' => 'wmdk/tracking/google-tag-manager/default.tpl',
-        'wmdk_google_tag_manager_noscript.tpl' => 'wmdk/tracking/google-tag-manager/no-script.tpl',
-        'wmdk_google_tag_manager_thankyou.tpl' => 'wmdk/tracking/google-tag-manager/thankyou.tpl',
+    'extend' => array(
+        SearchController::class => Kussin\Sooqr\Controller\SearchController::class,
     ),
-    
+
     'blocks' => array(
         array(
-            'template'	=> 'layout/base.tpl',
-            'block'		=> 'head_meta_robots',
-            'file' 		=> '/views/blocks/head_meta_robots.tpl'
+            'template' => 'layout/base.tpl',
+            'block' => 'base_js',
+            'file' => '/views/blocks/base_js.tpl'
         ),
         array(
-            'template'	=> 'layout/base.tpl',
-            'block'		=> 'theme_svg_icons',
-            'file' 		=> '/views/blocks/theme_svg_icons.tpl'
-        ),
-        array(
-            'template'	=> 'layout/base.tpl',
-            'block'		=> 'base_js',
-            'file' 		=> '/views/blocks/base_js.tpl'
+            'template' => 'widget/header/search.tpl',
+            'block' => 'widget_header_search_form',
+            'file' => '/views/blocks/widget_header_search_form.tpl'
         ),
     ),
 
     'settings' => array(
-        array('group' => 'sWmdkTrackingGoogleTagManagerSettings', 'name' => 'sWmdkTrackingGoogleTagManagerId', 'type' => 'str', 'value' => 'GTM-KLDD9DE'),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'sKussinSooqrClientId',
+            'type' => 'str',
+            'value' => '123456-1',
+        ),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'bKussinSooqrResizeFunction',
+            'type' => 'bool',
+            'value' => 0,
+        ),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'sKussinSooqrPosition',
+            'type' => 'str',
+            'value' => 'screen-middle',
+        ),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'sKussinPositionOptions',
+            'type' => 'str',
+            'value' => '{top:0}',
+        ),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'sKussinSooqrLocaleCode',
+            'type' => 'str',
+            'value' => 'de_DE',
+        ),
+        array(
+            'group' => 'sKussinSooqrSettings',
+            'name' => 'sKussinSooqrExcludePlaceholders',
+            'type' => 'str',
+            'value' => 'Suche..',
+        ),
     )
 );

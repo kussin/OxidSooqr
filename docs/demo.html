@@ -1,0 +1,34 @@
+<form class="form search kussin-sooqr" role="form" action="#" method="get" name="search">
+        <div class="input-group">
+            <input class="form-control" type="text" id="searchParam" name="searchparam" value="" placeholder="Suche" autocomplete="off">
+
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary" title="Suchen">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+	
+	<!-- Start Sooqr.com on-site search and navigation code -->
+    <script type="text/javascript">
+        var _wssq = _wssq || [];
+        var setResizeFunction= false;
+        var sooqrAccount = '120922-1';
+
+        _wssq.push(['_load', { 'suggest' : { 'account' : 'SQ-' + sooqrAccount, 'version' : 4, fieldId : 'search'}}]);
+        _wssq.push(['suggest._setPosition', 'screen-middle', {top:0}]);
+        _wssq.push(['suggest._setLocale', 'en_US']);
+        _wssq.push(['suggest._excludePlaceholders', 'Search..']);
+        _wssq.push(['suggest._bindEvent', 'open', function() {
+        if(!setResizeFunction) {$jQ( window ).resize(function() {if($jQ('.sooqrSearchContainer-' + sooqrAccount).is(':visible'))
+            {websight.sooqr.instances['SQ-' + sooqrAccount].positionContainer(null, null, true);}});setResizeFunction = true;}
+        }]);
+
+        (function() {
+            var ws = document.createElement('script'); ws.type = 'text/javascript'; ws.async = true;
+            ws.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.sooqr.com/sooqr.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ws, s);
+        })();
+    </script>
+<!-- End Sooqr.com on-site search and navigation code -->
