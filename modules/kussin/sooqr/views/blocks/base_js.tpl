@@ -16,7 +16,7 @@
     var sooqrAccount = '[{$sSooqrId}]';
 
     _wssq.push(['_load', { 'suggest' : { 'account' : 'SQ-' + sooqrAccount, 'version' : 4, fieldId : 'searchParam'}}]);
-    _wssq.push(['suggest._setPosition', '[{$sPosition}]', '[{$sPositionOptions}]']);
+    _wssq.push(['suggest._setPosition', '[{$sPosition}]', [{$sPositionOptions}]]);
     _wssq.push(['suggest._setLocale', '[{$sLocale}]']);
     _wssq.push(['suggest._excludePlaceholders', '[{$sExcludePlaceholders}]']);
     _wssq.push(['suggest._bindEvent', 'open', function() {
