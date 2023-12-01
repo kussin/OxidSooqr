@@ -1,6 +1,6 @@
 {
     "name":        "kussin/sooqr",
-    "version":     "1.0.0",
+    "version":     "1.0.0.1",
     "description": "Kussin | Sooqr Connector for OXID eShop",
     "type":        "oxideshop-module",
     "keywords":    [
@@ -41,7 +41,7 @@
     "require":     {
         "php": ">=7.4",
         "oxid-esales/oxideshop-ce": "^6.0",
-        "wmdk/wmdkffexportqueue": "*",
+        "wmdk/wmdkffexportqueue": "°1.9"
     },
     "autoload":    {
         "psr-4": {
