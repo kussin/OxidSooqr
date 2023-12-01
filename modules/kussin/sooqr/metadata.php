@@ -14,7 +14,7 @@ $aModule = array(
     'title'        => 'Kussin | Sooqr Connector for OXID eShop',
     'description'  => 'Sooqr Connector for OXID eShop',
     'thumbnail'    => 'module.png',
-    'version'      => '1.0.0.1',
+    'version'      => '1.1.0',
     'author'       => 'Daniel Kussin',
     'url'          => 'https://www.kussin.de',
     'email'        => 'daniel.kussin@kussin.de',
@@ -33,6 +33,11 @@ $aModule = array(
             'template' => 'widget/header/search.tpl',
             'block' => 'widget_header_search_form',
             'file' => '/views/blocks/widget_header_search_form.tpl'
+        ),
+        array(
+            'template' => 'page/details/inc/related_products.tpl',
+            'block' => 'details_relatedproducts_crossselling',
+            'file' => '/views/blocks/details_relatedproducts_crossselling.tpl'
         ),
     ),
 
@@ -72,6 +77,25 @@ $aModule = array(
             'name' => 'sKussinSooqrExcludePlaceholders',
             'type' => 'str',
             'value' => 'Suche..',
+        ),
+
+        array(
+            'group' => 'sKussinSooqrRecommendationsSettings',
+            'name' => 'blKussinSooqrRecommendationsEnabled',
+            'type' => 'bool',
+            'value' => 0,
+        ),
+        array(
+            'group' => 'sKussinSooqrRecommendationsSettings',
+            'name' => 'blKussinSooqrRecommendationsSubheadingEnabled',
+            'type' => 'bool',
+            'value' => 0,
+        ),
+        array(
+            'group' => 'sKussinSooqrRecommendationsSettings',
+            'name' => 'sKussinSooqrRecommendationsContainerUuid',
+            'type' => 'str',
+            'value' => 'ed4898cc-be9c-465c-84b9-5181d2664048',
         ),
     )
 );

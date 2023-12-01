@@ -9,4 +9,9 @@ $aLang = array(
     'SHOP_MODULE_sKussinPositionOptions' => 'Suggest position options (default: "{top:0}")',
     'SHOP_MODULE_sKussinSooqrLocaleCode' => 'Language code (e.g. "en_US")',
     'SHOP_MODULE_sKussinSooqrExcludePlaceholders' => 'Exclude placeholders (e.g. "Search..")',
+
+    'SHOP_MODULE_GROUP_sKussinSooqrRecommendationsSettings' => 'Recommendations settings',
+    'SHOP_MODULE_blKussinSooqrRecommendationsEnabled' => 'Enable recommendations',
+    'SHOP_MODULE_blKussinSooqrRecommendationsSubheadingEnabled' => 'Enable subheading',
+    'SHOP_MODULE_sKussinSooqrRecommendationsContainerUuid' => 'Personal container uuid',
 );
