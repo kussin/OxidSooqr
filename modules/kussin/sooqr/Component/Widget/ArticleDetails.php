@@ -47,13 +47,41 @@ class ArticleDetails extends ArticleDetails_parent
         $oArticle = $this->_getArticle();
 
         if ($oArticle != NULL) {
-            // TODO: Load SOOQR UUID from Article Vendor
+            // Load SOOQR UUID from Article Vendor
+            $sSooqrVendorUuid = trim($oArticle->getVendor()->oxvendor__kussinsooqruuid->value);
+            if (
+                ($sSooqrVendorUuid != NULL)
+                && ($sSooqrVendorUuid != '')
+            ) {
+                $sSooqrUuid = $sSooqrVendorUuid;
+            }
 
-            // TODO: Load SOOQR UUID from Article Manufacturer
+            // Load SOOQR UUID from Article Manufacturer
+            $sSooqrManufacturerUuid = trim($oArticle->getManufacturer()->oxmanufacturers__kussinsooqruuid->value);
+            if (
+                ($sSooqrManufacturerUuid != NULL)
+                && ($sSooqrManufacturerUuid != '')
+            ) {
+                $sSooqrUuid = $sSooqrManufacturerUuid;
+            }
 
-            // TODO: Load SOOQR UUID from Article Main Category
+            // Load SOOQR UUID from Article Main Category
+            $sSooqrCategoryUuid = trim($oArticle->getCategory()->oxcategories__kussinsooqruuid->value);
+            if (
+                ($sSooqrCategoryUuid != NULL)
+                && ($sSooqrCategoryUuid != '')
+            ) {
+                $sSooqrUuid = $sSooqrCategoryUuid;
+            }
 
-            // TODO: Load SOOQR UUID from Article
+            // Load SOOQR UUID from Article
+            $sSooqrArticleUuid = trim($oArticle->oxarticles__kussinsooqruuid->value);
+            if (
+                ($sSooqrArticleUuid != NULL)
+                && ($sSooqrArticleUuid != '')
+            ) {
+                $sSooqrUuid = $sSooqrArticleUuid;
+            }
 
         }
 
