@@ -4,6 +4,8 @@
  */
 $sMetadataVersion = '2.0';
 
+use Kussin\Sooqr\Core\ModuleEvents;
+use OxidEsales\Eshop\Application\Component\Widget\ArticleDetails;
 use OxidEsales\Eshop\Application\Controller\SearchController;
 
 /**
@@ -20,7 +22,12 @@ $aModule = array(
     'email'        => 'daniel.kussin@kussin.de',
 
     'extend' => array(
+        ArticleDetails::class => Kussin\Sooqr\Component\Widget\ArticleDetails::class,
         SearchController::class => Kussin\Sooqr\Controller\SearchController::class,
+    ),
+
+    'events' => array(
+        'onActivate' => ModuleEvents::class . '::onActivate',
     ),
 
     'blocks' => array(
