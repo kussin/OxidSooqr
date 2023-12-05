@@ -24,14 +24,14 @@ final class ModuleEvents
     private static function _addNewColumn($sTable, $aColumns): void
     {
         foreach ($aColumns as $aColumn) {
-            $sColumn = $aColumn['column'];
+            $sName = $aColumn['name'];
             $sSettings = $aColumn['settings'];
 
-            $sQuery = "SHOW COLUMNS FROM `$sTable` LIKE '$sColumn';";
+            $sQuery = "SHOW COLUMNS FROM `$sTable` LIKE '$sName';";
             $oResult = DatabaseProvider::getDb()->getAll($sQuery);
 
-            if ($oResult != false && $oResult->count() > 0) {
-                $sQuery = "ALTER TABLE `$sTable` ADD COLUMN `$sColumn` $sSettings;";
+            if ($oResult == FALSE) {
+                $sQuery = "ALTER TABLE `$sTable` ADD COLUMN `$sName` $sSettings;";
                 DatabaseProvider::getDb()->execute($sQuery);
             }
         }
@@ -41,10 +41,12 @@ final class ModuleEvents
     {
         self::_addNewColumn(
             'oxvendor',
-            array(
-                'column' => 'KUSSINSOOQRUUID',
-                'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
-            )
+            [
+                array(
+                    'name' => 'KUSSINSOOQRUUID',
+                    'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
+                )
+            ]
         );
     }
 
@@ -52,10 +54,12 @@ final class ModuleEvents
     {
         self::_addNewColumn(
             'oxmanufacturers',
-            array(
-                'column' => 'KUSSINSOOQRUUID',
-                'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
-            )
+            [
+                array(
+                    'name' => 'KUSSINSOOQRUUID',
+                    'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
+                )
+            ]
         );
     }
 
@@ -63,10 +67,12 @@ final class ModuleEvents
     {
         self::_addNewColumn(
             'oxcategories',
-            array(
-                'column' => 'KUSSINSOOQRUUID',
-                'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
-            )
+            [
+                array(
+                    'name' => 'KUSSINSOOQRUUID',
+                    'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
+                )
+            ]
         );
     }
 
@@ -74,10 +80,12 @@ final class ModuleEvents
     {
         self::_addNewColumn(
             'oxarticles',
-            array(
-                'column' => 'KUSSINSOOQRUUID',
-                'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
-            )
+            [
+                array(
+                    'name' => 'KUSSINSOOQRUUID',
+                    'settings' => 'VARCHAR(50) NULL DEFAULT NULL COMMENT \'KUSSIN Sooqr UUID\' COLLATE \'utf8_general_ci\'',
+                )
+            ]
         );
     }
 
