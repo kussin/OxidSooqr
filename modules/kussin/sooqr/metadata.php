@@ -32,19 +32,39 @@ $aModule = array(
 
     'blocks' => array(
         array(
+            'template' => 'article_main.tpl',
+            'block' => 'admin_article_main_form',
+            'file' => 'views/blocks/admin/admin_article_main_form.tpl',
+        ),
+        array(
+            'template' => 'include/category_main_form.tpl',
+            'block' => 'admin_category_main_form',
+            'file' => 'views/blocks/admin/admin_category_main_form.tpl',
+        ),
+        array(
+            'template' => 'manufacturer_main.tpl',
+            'block' => 'admin_manufacturer_main_form',
+            'file' => 'views/blocks/admin/admin_manufacturer_main_form.tpl',
+        ),
+        array(
+            'template' => 'vendor_main.tpl',
+            'block' => 'admin_vendor_main_form',
+            'file' => 'views/blocks/admin/admin_vendor_main_form.tpl',
+        ),
+        array(
             'template' => 'layout/base.tpl',
             'block' => 'base_js',
-            'file' => '/views/blocks/base_js.tpl'
+            'file' => '/views/blocks/base_js.tpl',
         ),
         array(
             'template' => 'widget/header/search.tpl',
             'block' => 'widget_header_search_form',
-            'file' => '/views/blocks/widget_header_search_form.tpl'
+            'file' => '/views/blocks/widget_header_search_form.tpl',
         ),
         array(
             'template' => 'page/details/inc/related_products.tpl',
             'block' => 'details_relatedproducts_crossselling',
-            'file' => '/views/blocks/details_relatedproducts_crossselling.tpl'
+            'file' => '/views/blocks/details_relatedproducts_crossselling.tpl',
         ),
     ),
 
